@@ -1,8 +1,8 @@
 # DUALSHOCK 4 + Raspberry Pi 3
 
-<b>This is just a compilation of commands needed to get the Dualshock 4 up and running on the Raspberry Pi 3</b>
+<b>This is just a simplified compilation of commands needed to get the Dualshock 4 up and running on the Raspberry Pi 3.</b>
 
-Credit to these links/websites:
+Credit to these links/websites for the guidance:
 
 https://github.com/retropie/retropie-setup/wiki/PS4-Controller
 
@@ -10,24 +10,26 @@ https://github.com/chrippa/ds4drv
 
 https://www.piborg.org/joyborg
 
-<b>Procedures to install linux driver for Dualshock 4 on Raspberry Pi 3</b>
+<h1>Procedures to install linux driver for Dualshock 4 on Raspberry Pi 3</h1>
 
-Copy and paste all these commands to complete the installation.
-Make sure the Dualshock 4 controller is charged to ensure reliable connection later on.
+<b>Copy</b> and <b>paste</b> all these commands to complete the installation.
+Make sure the Dualshock 4 controller is charged to ensure reliable bluetooth connection later on.
 
-Commands list:
+<b>Commands list:</b>
+
+<h2>Step 0:</h2> 
 
 <code>sudo apt-get update</code>
 
-You will now need to run the following to ensure the generic joystick drivers are installed first:
-
 <h2>Step 1:</h2> 
+
+You will now need to run the following to ensure the generic joystick drivers are installed first:
 
 <code>sudo apt-get -y install joystick</code>
 
-Then you will want to run jstest as follows:
-
 <h2>Step 2:</h2> 
+
+Then you will want to run jstest as follows:
 
 <code>jstest /dev/input/js0</code>
 
@@ -60,7 +62,7 @@ Then you will want to run jstest as follows:
 
 <h4>By now, the driver is fully installed and you can test pairing with Dualshock 4</h4>
 
-<h4>Make sure Bluetooth on the Pi is turned ON. Then, press and hold (PS button) + (Share button) on Dualshock 4
+<h4>Make sure Bluetooth on the Pi is turned ON. Then, press and hold <code>PS button</code> + <code>Share button</code> on Dualshock 4
 Hold until the LED on the controller blinks rapidly</h4>
 
 <h2>Step 6:</h2> 
