@@ -67,15 +67,19 @@ Hold until the LED on the controller blinks rapidly</h4>
 
 <h2>Step 6:</h2> 
 
-<b>On the terminal run this command:</b>
+<b>On the terminal run this command to run the driver normally:</b>
 
 <code>sudo ds4drv</code>
 
-<b>If everything is correct, the Pi will detect the controller. Now you can retry <code>Step 2</code> to test the Dualshock 4</b>
+<b>If you want to run the driver in the background (daemon), add <code>&</code> at the end:</b>
+
+<code>sudo ds4drv &</code>
+
+<b>If everything is correct, the Pi will detect the controller. Now you can retry <code>Step 2</code> to test the Dualshock 4 input. You can open up a new Terminal session to perform the following command.</b>
 
 <code>jstest /dev/input/js0</code>
 
-<b>*************************************************************************************************</b>
+<b>______________________________________________________________________________________________________________________</b>
 
 <h2>Step 7:</h2> 
 
