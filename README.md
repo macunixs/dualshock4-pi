@@ -71,7 +71,9 @@ Hold until the LED on the controller blinks rapidly</h4>
 
 <code>sudo ds4drv</code>
 
-<b>If everything is correct, the Pi will detect the controller.</b>
+<b>If everything is correct, the Pi will detect the controller. Now you can retry <code>Step 2</code> to test the Dualshock 4</b>
+
+<code>jstest /dev/input/js0</code>
 
 <b>*************************************************************************************************</b>
 
