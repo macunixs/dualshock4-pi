@@ -1,5 +1,16 @@
-# dualshock4-pi
-Procedures to install driver for Dualshock 4 on Raspberry Pi 3
+# DUALSHOCK 4 + Raspberry Pi 3
+
+<b>This is just a compilation of commands needed to get the Dualshock 4 up and running on the Raspberry Pi 3</b>
+
+Credit to these links/websites:
+
+https://github.com/retropie/retropie-setup/wiki/PS4-Controller
+
+https://github.com/chrippa/ds4drv
+
+https://www.piborg.org/joyborg
+
+<b>Procedures to install linux driver for Dualshock 4 on Raspberry Pi 3</b>
 
 Copy and paste all these commands to complete the installation.
 Make sure the Dualshock 4 controller is charged to ensure reliable connection later on.
@@ -8,13 +19,35 @@ Commands list:
 
 <code>sudo apt-get update</code>
 
+You will now need to run the following to ensure the generic joystick drivers are installed first:
+
+<h2>Step 1:</h2> 
+
+<code>sudo apt-get -y install joystick</code>
+
+Then you will want to run jstest as follows:
+
+<h2>Step 2:</h2> 
+
+<code>jstest /dev/input/js0</code>
+
+<b>Note: If you run the above command <code>jstest</code> for the first time, you will get this error: <code>jstest: No such file or directory</code> It is because there is no Joystick connected yet. Don't worry. Just proceed to Step 3.</b>
+
+<h2>Step 3:</h2> 
+
 <code>sudo apt install python-dev python3-dev python-pip python3-pip</code>
+
+<h2>Step 4:</h2> 
+
+<i>(install either one or both)</i> 
 
 <b>Install for Python 3</b>:
 <code>sudo pip3 install ds4drv</code>
 
 <b>Install for Python 2</b>:
 <code>sudo pip install ds4drv</code>
+
+<h2>Step 5:</h2>  
 
 <b>Allow non-root users to control the ds4drv joystick: Location:<code>/etc/udev/rules.d/</code></b>
 
@@ -25,10 +58,12 @@ Commands list:
 <code>sudo udevadm trigger</code>
 
 
-<h3>By now, the driver has been fully installed and you can try to perform pairing with Dualshock 4</h3>
+<h4>By now, the driver is fully installed and you can test pairing with Dualshock 4</h4>
 
-<h3>Make sure Bluetooth on the Pi is turned ON. Then, press and hold (PS button) + (Share button) on Dualshock 4
-Hold until the LED on the controller blinks rapidly</h3>
+<h4>Make sure Bluetooth on the Pi is turned ON. Then, press and hold (PS button) + (Share button) on Dualshock 4
+Hold until the LED on the controller blinks rapidly</h4>
+
+<h2>Step 6:</h2> 
 
 <b>On the terminal run this command:</b>
 
@@ -38,16 +73,22 @@ Hold until the LED on the controller blinks rapidly</h3>
 
 <b>*************************************************************************************************</b>
 
-<b>Now configure ds4drv to run at startup by editing the rc.local file:</b>
+<h2>Step 7:</h2> 
+
+<b>[IMPORTANT] Now configure ds4drv to run at startup by editing the rc.local file:</b>
 
 <code>sudo nano /etc/rc.local</code>
 
-<b>After the # By default this script does nothing. line, add a new line with the contents:</b>
+<b>After the <code># By default this script does nothing.</code> line, add a new line with the contents:</b>
 
 <code>/usr/local/bin/ds4drv &</code>
 
+<h2>Step 8:</h2> 
+
 <b>Now just reboot the Pi so that the driver will be started at boot.</b>
 
-<b>Once rebooted, enter this command to check if ds4drv driver is running in the background as root</b>
+<b>Once rebooted, enter command in Step 9 to check if the <code>ds4drv</code> driver is running in the background as root.</b>
+
+<h2>Step 9:</h2> 
 
 <code>ps aux | grep python</code>
