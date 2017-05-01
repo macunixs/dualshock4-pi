@@ -16,7 +16,7 @@ Commands list:
 <b>Install for Python 2</b>:
 <code>sudo pip install ds4drv</code>
 
-<b>Allow non-root users to control the ds4drv joystick:</b>
+<b>Allow non-root users to control the ds4drv joystick: Location:<code>/etc/udev/rules.d/</code></b>
 
 <code>sudo wget https://raw.githubusercontent.com/chrippa/ds4drv/master/udev/50-ds4drv.rules -O /etc/udev/rules.d/50-ds4drv.rules</code>
 
