@@ -6,9 +6,7 @@ Make sure the Dualshock 4 controller is charged to ensure reliable connection la
 
 Commands list:
 
-<code>
-
-sudo apt-get update
+<code>sudo apt-get update</code>
 
 sudo apt install python-dev python3-dev python-pip python3-pip
 
@@ -52,6 +50,4 @@ sudo nano /etc/rc.local
 
 <b>Once rebooted, enter this command to check if ds4drv driver is running in the background as root</b>
 
-ps aux | grep python
-
-</code>
+<code>ps aux | grep python</code>
